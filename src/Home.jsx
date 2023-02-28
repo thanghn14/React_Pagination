@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
 import usePaginate from "./hooks/usePaginate";
+import './Home.css'
 
 function Home() {
   const [searchParams] = useSearchParams();
@@ -10,7 +11,7 @@ function Home() {
 
   return (
     <div className="container">
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <td>#</td>
@@ -34,7 +35,7 @@ function Home() {
           })}
         </tbody>
       </table>
-      <div style={{ display: "flex", gap: ".5rem" }}>
+      <div className="pagination">
         <Link to={`?page=${prevPage}&limit=${limit}`}>Prev page</Link>
         <Link to={`?page=${nextPage}&limit=${limit}`}>Next page</Link>
       </div>
